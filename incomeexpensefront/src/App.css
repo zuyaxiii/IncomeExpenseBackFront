@@ -1,0 +1,337 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #212121;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.flex-container select,
+.flex-container input,
+.flex-container button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.flex-container button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+}
+
+
+.form {
+  width: 300px;
+  padding: 64px 15px 24px;
+  margin: 0 auto;
+}
+
+.register {
+  width: 400px;
+  padding-top: 20px;
+  padding-left: 10px;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+.form .control {
+  margin: 0 0 24px;
+}
+
+.form .control input,
+.form .control select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+}
+
+.form .control input:hover,
+.form .control input:focus,
+.form .control select:hover,
+.form .control select:focus {
+  outline: none;
+  border: 0;
+}
+
+.form .btn {
+  width: 100%;
+  display: block;
+  padding: 14px 16px;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.block-cube {
+  position: relative;
+  cursor: pointer;
+}
+
+.block-cube .bg-top {
+  position: absolute;
+  height: 10px;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+  bottom: 100%;
+  left: 5px;
+  right: -5px;
+  transform: skew(-45deg, 0);
+  margin: 0;
+}
+
+.block-cube .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+}
+
+.block-cube .bg-right {
+  position: absolute;
+  background: #00d4ff;
+  top: -5px;
+  z-index: 0;
+  bottom: 5px;
+  width: 10px;
+  left: 100%;
+  transform: skew(0, -45deg);
+}
+
+.block-cube .bg .bg-inner {
+  transition: all 0.2s ease-in-out;
+}
+
+.block-cube .bg-inner {
+  background: #212121;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.block-cube .text {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.block-cube.block-input input {
+  position: relative;
+  z-index: 2;
+}
+
+.block-cube.block-input input:focus ~ .bg-right .bg-inner,
+.block-cube.block-input input:focus ~ .bg-top .bg-inner,
+.block-cube.block-input input:focus ~ .bg-inner .bg-inner {
+  top: 100%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.block-cube.block-input .bg-top,
+.block-cube.block-input .bg-right,
+.block-cube.block-input .bg {
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.2s ease-in-out;
+}
+
+.block-cube.block-input .bg-right .bg-inner,
+.block-cube.block-input .bg-top .bg-inner {
+  transition: all 0.2s ease-in-out;
+}
+
+.block-cube.block-input:focus .bg-top,
+.block-cube.block-input:focus .bg-right,
+.block-cube.block-input:focus .bg,
+.block-cube.block-input:hover .bg-top,
+.block-cube.block-input:hover .bg-right,
+.block-cube.block-input:hover .bg {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form .control.block-cube select {
+  position: relative;
+  z-index: 2;
+}
+
+.credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 15px 15px;
+  width: 100%;
+  z-index: 111;
+}
+
+.credits a {
+  opacity: 0.6;
+  color: #fff;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  opacity: 1;
+}
+
+.error {
+  padding-bottom: 20px;
+}
+
+.p-6 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 15px 24px;
+}
+
+.text-2xl {
+  font-size: 23px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+select,
+input[type="date"] {
+  width: 180px;
+  padding: 14px 16px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: monospace, serif;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  position: relative;
+  z-index: 2;
+  appearance: none;
+  background-color: #212121;
+  cursor: pointer;
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  background-color: rgba(52, 9, 121, 0.1);
+}
+
+select:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 5px rgba(0, 212, 255, 0.7);
+}
+
+button.bg-blue-500 {
+  width: 200px;
+  padding: 14px 16px;
+  background: transparent;
+  outline: none;
+  border: 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+  cursor: pointer;
+}
+
+button.bg-blue-500:hover {
+  background: linear-gradient(90deg, #020024 0%, #4a0ba8 37%, #27e9ff 94%);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 30px;
+}
+
+table th,
+table td {
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background-color: rgba(52, 9, 121, 0.5);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+table tr {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s;
+}
+
+table tr:hover {
+  background-color: rgba(52, 9, 121, 0.2);
+}
+
+button.bg-red-500 {
+  background: linear-gradient(90deg, #330033 0%, #aa0000 100%);
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button.bg-red-500:hover {
+  background: linear-gradient(90deg, #440044 0%, #cc0000 100%);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+button.bg-green-500 {
+  background: linear-gradient(90deg, #023e02 0%, #006300 100%);
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button.bg-green-500:hover {
+  background: linear-gradient(90deg, #022d02 0%, #008000 100%);
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
