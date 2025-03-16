@@ -40,7 +40,7 @@ MONGODB_URI=mongodb://localhost:27017/your-database-name
 JWT_SECRET=your_jwt_secret_here
 
 # Server Port
-PORT=5000
+PORT=4000
 ```
 
 - แทนที่ mongodb://localhost:27017/your-database-name ด้วย MongoDB URI ของคุณที่เตรียมเอาไว้ครับ
@@ -54,11 +54,11 @@ PORT=5000
 node server.js
 ```
 
-นี่จะเริ่มเซิร์ฟเวอร์บนพอร์ตที่ระบุในไฟล์ .env (หรือ พอร์ต 4000)
+นี่จะเริ่มเซิร์ฟเวอร์บนพอร์ตที่ระบุในไฟล์ .env (หรือ Defult PORT 4000)
 
 ## การยืนยันตัวตน
 
-ทุกเอนด์พอยท์ (ยกเว้น `/register` และ `/login`) ต้องการการยืนยันตัวตน ใช้ **Bearer token** ในส่วนหัว `Authorization` เพื่อเข้าถึงเส้นทางที่ได้รับการคุ้มครอง
+ทุกเอนด์พอยท์ (ยกเว้น `/register` และ `/login`) ต้องการการยืนยันตัวตน ใช้ **Bearer token** ในส่วนหัว `Authorization` เพื่อเข้าถึงเส้นทางที่ได้ Authenticate ไว้
 
 ตัวอย่าง:
 ```
@@ -376,7 +376,7 @@ npm run dev
 
 ## การเชื่อมต่อกับ Backend
 
-Frontend ถูกตั้งค่าให้เชื่อมต่อกับ Backend API ที่ `http://localhost:4000` โดยอัตโนมัติ ตรวจสอบให้แน่ใจว่า Backend server กำลังทำงานก่อนที่คุณจะเริ่มใช้งานฟีเจอร์ที่ต้องการการเชื่อมต่อกับ API
+Frontend ถูกตั้งค่าให้เชื่อมต่อกับ Backend API ที่ `http://localhost:4000` โดยอัตโนมัติ หากเปลี่ยน PORT Backend ควรเปลี่ยนหน้าบ้านด้วยเพื่อความถูกต้อง ตรวจสอบให้แน่ใจว่า Backend server กำลังทำงานก่อนที่คุณจะเริ่มใช้งานฟีเจอร์ที่ต้องการการเชื่อมต่อกับ API
 
 ## ฟีเจอร์หลัก
 
